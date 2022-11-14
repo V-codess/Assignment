@@ -11,18 +11,17 @@ function toRead(filename){
       .on('data', (data) => read.push(data))
       .on('end', () => {
         sort = read.sort((a,b)=>{
-          const nameA = a.username.toUpperCase(); 
-         const nameB = b.username.toUpperCase(); 
-            if (nameA < nameB) {
+          const first = a.username.toUpperCase(); 
+         const second = b.username.toUpperCase(); 
+            if (first < second) {
     return -1;
   }
-  if (nameA > nameB) {
+  if (first > second) {
     return 1;
   }
   else{
   return 0;
   }
-  // names must be equal
         });
    console.log(sort)  
    })
